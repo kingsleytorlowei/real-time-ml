@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from fastapi.templating import Jinja2Templates
-from app.database import SessionLocal
+from app.database import Session
 from app.views import router
 
 logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
@@ -28,8 +28,9 @@ app.add_middleware(
     allow_headers=["*"],
     allow_credentials=True,
 )
+
 def get_db():
-    db = SessionLocal()
+    db = Session()
     try:
         yield db
     finally:

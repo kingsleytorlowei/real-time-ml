@@ -35,4 +35,6 @@ class Predictions(Base):
     ptratio = Column(Float)
     b = Column(Float)
     lstat = Column(Float)
+    prediction = Column(Float)
+    pipeline_version = Column(Float)
     

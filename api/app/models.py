@@ -40,7 +40,7 @@ class RequestData(BaseModel):
 
 class Task(BaseModel):
     # Celery task representation
-    task_id: str
+    id: str
     status: str
 
 
